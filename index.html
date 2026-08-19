@@ -1,735 +1,994 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Balqis Putri | Psychology Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-
-body{
-
-font-family:'Poppins',sans-serif;
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:30px;
-
-overflow:hidden;
-
-background:
-linear-gradient(
-135deg,
-#ffb6d9,
-#ffd9ec,
-#d9fff8,
-#8ff4e5
-);
-
-}
-
-
-
-/* Background Glow */
-
-body::before{
-
-content:"";
-
-position:absolute;
-
-width:450px;
-height:450px;
-
-background:#ff3f9f;
-
-border-radius:50%;
-
-filter:blur(130px);
-
-top:-150px;
-left:-150px;
-
-opacity:.35;
-
-}
-
-
-body::after{
-
-content:"";
-
-position:absolute;
-
-width:400px;
-height:400px;
-
-background:#00e5d4;
-
-border-radius:50%;
-
-filter:blur(120px);
-
-bottom:-100px;
-right:-100px;
-
-opacity:.4;
-
-}
-
-
-
-/* =====================
-TRISULA EFFECT
-===================== */
-
-
-.trisula{
-
-position:absolute;
-
-right:12%;
-
-top:20%;
-
-width:120px;
-
-height:180px;
-
-animation:floatTrident 8s infinite ease-in-out;
-
-filter:drop-shadow(0 0 20px #00ffe0);
-
-}
-
-
-
-.trisula span{
-
-position:absolute;
-
-bottom:0;
-
-left:50%;
-
-width:8px;
-
-height:120px;
-
-background:
-
-linear-gradient(
-180deg,
-#ffffff,
-#00e5d4,
-#ff3f9f
-);
-
-border-radius:20px;
-
-transform-origin:bottom;
-
-}
-
-
-
-/* middle blade */
-
-.trisula span:nth-child(1){
-
-transform:translateX(-50%);
-
-}
-
-
-/* left blade */
-
-.trisula span:nth-child(2){
-
-height:90px;
-
-transform:
-
-translateX(-25px)
-rotate(-25deg);
-
-}
-
-
-/* right blade */
-
-.trisula span:nth-child(3){
-
-height:90px;
-
-transform:
-
-translateX(18px)
-rotate(25deg);
-
-}
-
-
-
-/* glowing tip */
-
-.trisula span::before{
-
-content:"";
-
-position:absolute;
-
-top:-10px;
-
-left:-8px;
-
-width:22px;
-
-height:22px;
-
-border-radius:50%;
-
-background:#fff;
-
-box-shadow:
-
-0 0 20px #00fff0;
-
-}
-
-
-
-
-@keyframes floatTrident{
-
-
-0%,100%{
-
-transform:
-translateY(0)
-rotate(0deg);
-
-}
-
-
-50%{
-
-transform:
-translateY(-35px)
-rotate(8deg);
-
-}
-
-
-}
-
-
-
-
-
-/* Main Card */
-
-
-.card{
-
-
-width:900px;
-
-max-width:100%;
-
-
-background:
-
-rgba(255,255,255,.78);
-
-
-backdrop-filter:blur(25px);
-
-
-border-radius:35px;
-
-
-padding:55px;
-
-
-box-shadow:
-
-0 25px 60px rgba(200,60,130,.25);
-
-
-animation:appear 1s ease;
-
-
-position:relative;
-
-}
-
-
-
-/* Spark */
-
-.spark{
-
-position:absolute;
-
-color:#ffd45c;
-
-font-size:25px;
-
-animation:spark 2s infinite;
-
-}
-
-
-.spark.one{
-
-top:30px;
-
-right:40px;
-
-}
-
-
-.spark.two{
-
-bottom:30px;
-
-left:40px;
-
-}
-
-
-
-
-
-/* Profile */
-
-
-.profile{
-
-display:flex;
-
-align-items:center;
-
-gap:45px;
-
-flex-wrap:wrap;
-
-}
-
-
-
-.avatar{
-
-
-width:180px;
-
-height:180px;
-
-
-border-radius:50%;
-
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-
-font-size:60px;
-
-
-font-family:'Cormorant Garamond',serif;
-
-
-color:#d21872;
-
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#ff70b5,
-
-#7df5e7
-
-);
-
-
-box-shadow:
-
-0 15px 35px rgba(0,0,0,.15);
-
-}
-
-
-
-
-.content{
-
-flex:1;
-
-}
-
-
-
-h1{
-
-
-font-family:'Cormorant Garamond',serif;
-
-
-font-size:70px;
-
-
-color:#c91868;
-
-
-}
-
-
-
-.subtitle{
-
-
-margin:10px 0 20px;
-
-
-font-size:18px;
-
-
-color:#087f82;
-
-
-font-weight:500;
-
-
-}
-
-
-
-.description{
-
-
-color:#555;
-
-
-line-height:1.9;
-
-
-}
-
-
-
-
-.tag{
-
-
-display:inline-block;
-
-
-margin:20px 5px 0 0;
-
-
-padding:10px 20px;
-
-
-border-radius:50px;
-
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#ffd0e5,
-
-#c9fff8
-
-);
-
-
-color:#a31860;
-
-
-font-size:14px;
-
-
-}
-
-
-
-.button{
-
-
-display:inline-block;
-
-
-margin-top:30px;
-
-
-padding:13px 30px;
-
-
-border-radius:40px;
-
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#e91e82,
-
-#00cfc0
-
-);
-
-
-color:white;
-
-
-text-decoration:none;
-
-
-}
-
-
-
-
-@keyframes spark{
-
-
-0%,100%{
-
-opacity:.3;
-
-transform:scale(.8);
-
-}
-
-
-50%{
-
-opacity:1;
-
-transform:scale(1.5);
-
-}
-
-}
-
-
-
-@keyframes appear{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
-
-
-@media(max-width:650px){
-
-
-.card{
-
-padding:35px;
-
-text-align:center;
-
-}
-
-
-.profile{
-
-justify-content:center;
-
-}
-
-
-h1{
-
-font-size:50px;
-
-}
-
-
-.trisula{
-
-display:none;
-
-}
-
-
-}
-
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Balqis Putri — Psychology Graduate, Freelance Research Assistant, Data & Research Support, HR & People Operations.">
+  <title>Balqis Putri | Psychology × Research × People</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#34263a;
+      --muted:#766879;
+      --rose:#d95b91;
+      --rose-deep:#a83f70;
+      --pink:#f7c8dc;
+      --blush:#fff0f6;
+      --lilac:#e7dcfa;
+      --cream:#fffaf7;
+      --white:rgba(255,255,255,.78);
+      --line:rgba(104,70,101,.14);
+      --shadow:0 28px 80px rgba(120,72,109,.16);
+      --radius:30px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      min-height:100vh;
+      color:var(--ink);
+      font-family:"DM Sans",sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,191,220,.55), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(218,201,255,.55), transparent 30%),
+        radial-gradient(circle at 70% 90%, rgba(197,241,229,.45), transparent 28%),
+        linear-gradient(135deg,#fff7fb 0%,#fffdf9 48%,#f7f1ff 100%);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.35;
+      background-image:
+        radial-gradient(rgba(190,117,160,.25) 1px,transparent 1px);
+      background-size:28px 28px;
+      mask-image:linear-gradient(to bottom,black,transparent 80%);
+    }
+
+    a{color:inherit}
+
+    .spark-field{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      overflow:hidden;
+    }
+
+    .spark{
+      position:absolute;
+      color:#d889b0;
+      opacity:.5;
+      animation:twinkle 3.8s ease-in-out infinite;
+      text-shadow:0 0 14px rgba(217,91,145,.5);
+    }
+
+    .spark:nth-child(1){top:12%;left:7%;font-size:20px}
+    .spark:nth-child(2){top:23%;right:9%;font-size:13px;animation-delay:1s}
+    .spark:nth-child(3){top:58%;left:4%;font-size:15px;animation-delay:2s}
+    .spark:nth-child(4){top:76%;right:8%;font-size:22px;animation-delay:.5s}
+    .spark:nth-child(5){top:44%;right:20%;font-size:10px;animation-delay:1.7s}
+    .spark:nth-child(6){top:84%;left:22%;font-size:13px;animation-delay:2.5s}
+
+    @keyframes twinkle{
+      0%,100%{opacity:.2;transform:scale(.7) rotate(0)}
+      50%{opacity:1;transform:scale(1.35) rotate(18deg)}
+    }
+
+    .nav{
+      position:fixed;
+      z-index:20;
+      top:18px;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(1120px,calc(100% - 30px));
+      padding:11px 14px 11px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      border:1px solid rgba(255,255,255,.8);
+      background:rgba(255,255,255,.62);
+      backdrop-filter:blur(18px);
+      border-radius:999px;
+      box-shadow:0 14px 45px rgba(108,65,99,.10);
+    }
+
+    .brand{
+      text-decoration:none;
+      font-family:"Cormorant Garamond",serif;
+      font-size:25px;
+      font-weight:700;
+      color:var(--rose-deep);
+      white-space:nowrap;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      font-size:13px;
+      font-weight:600;
+      color:#5f4c5f;
+      padding:9px 12px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible{
+      color:var(--rose-deep);
+      background:var(--blush);
+      outline:none;
+    }
+
+    .hero{
+      position:relative;
+      z-index:1;
+      min-height:100vh;
+      width:min(1120px,calc(100% - 30px));
+      margin:auto;
+      padding:145px 0 85px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:65px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      margin-bottom:20px;
+      border:1px solid rgba(217,91,145,.18);
+      border-radius:999px;
+      background:rgba(255,255,255,.65);
+      color:var(--rose-deep);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+    }
+
+    .hero h1{
+      max-width:720px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(68px,9vw,112px);
+      line-height:.82;
+      letter-spacing:-.045em;
+      color:#382a3d;
+    }
+
+    .hero h1 span{
+      display:block;
+      margin-top:13px;
+      font-family:"Parisienne",cursive;
+      font-size:.54em;
+      line-height:1;
+      font-weight:400;
+      color:var(--rose);
+      letter-spacing:0;
+    }
+
+    .hero-role{
+      max-width:680px;
+      margin-top:28px;
+      font-size:18px;
+      line-height:1.75;
+      color:#5d4d5e;
+    }
+
+    .hero-role strong{color:var(--rose-deep)}
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+    }
+
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg,#d95b91,#a966ba);
+      box-shadow:0 14px 30px rgba(185,76,133,.25);
+    }
+
+    .btn-secondary{
+      color:#5f4c5f;
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--line);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .hero-card{
+      position:relative;
+      min-height:470px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .portrait-orb{
+      position:relative;
+      width:min(380px,78vw);
+      aspect-ratio:1;
+      border-radius:44% 56% 52% 48% / 52% 42% 58% 48%;
+      background:
+        radial-gradient(circle at 32% 28%,#fff 0 9%,transparent 10%),
+        linear-gradient(145deg,#ffd9e9,#e7dcfa 52%,#d4f4eb);
+      box-shadow:var(--shadow);
+      animation:float 7s ease-in-out infinite;
+      display:grid;
+      place-items:center;
+      overflow:visible;
+    }
+
+    .portrait-orb::before{
+      content:"";
+      position:absolute;
+      inset:-18px;
+      border:1px solid rgba(217,91,145,.20);
+      border-radius:inherit;
+      transform:rotate(8deg);
+    }
+
+    .portrait-orb::after{
+      content:"✦";
+      position:absolute;
+      top:3%;
+      right:4%;
+      color:#fff;
+      font-size:34px;
+      filter:drop-shadow(0 0 12px rgba(217,91,145,.5));
+      animation:twinkle 2.8s infinite;
+    }
+
+    .initials{
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      font-family:"Cormorant Garamond",serif;
+      font-size:86px;
+      font-weight:700;
+      color:#a94675;
+      background:rgba(255,255,255,.48);
+      border:10px solid rgba(255,255,255,.55);
+      box-shadow:0 18px 45px rgba(120,72,109,.12);
+    }
+
+    .orbit{
+      position:absolute;
+      width:92%;
+      height:92%;
+      border:1px dashed rgba(169,70,117,.24);
+      border-radius:50%;
+      transform:rotate(-17deg);
+    }
+
+    .orbit::after{
+      content:"✧";
+      position:absolute;
+      top:-10px;
+      left:20%;
+      font-size:20px;
+      color:#d95b91;
+      background:#fff4f8;
+      padding:2px 8px;
+      border-radius:50%;
+    }
+
+    .mini-card{
+      position:absolute;
+      left:0;
+      bottom:25px;
+      padding:16px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(255,255,255,.9);
+      box-shadow:0 18px 50px rgba(100,65,95,.14);
+      backdrop-filter:blur(14px);
+      max-width:245px;
+    }
+
+    .mini-card small{
+      display:block;
+      margin-bottom:5px;
+      color:#8b7487;
+      font-size:11px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .mini-card strong{
+      font-family:"Cormorant Garamond",serif;
+      font-size:22px;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(0)}
+      50%{transform:translateY(-14px) rotate(2deg)}
+    }
+
+    .section{
+      position:relative;
+      z-index:1;
+      width:min(1120px,calc(100% - 30px));
+      margin:auto;
+      padding:90px 0;
+    }
+
+    .section-head{
+      max-width:700px;
+      margin-bottom:34px;
+    }
+
+    .section-kicker{
+      color:var(--rose);
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.15em;
+    }
+
+    .section h2{
+      margin-top:8px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(42px,6vw,68px);
+      line-height:1;
+      color:#3a2b40;
+    }
+
+    .section-intro{
+      margin-top:15px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:22px;
+    }
+
+    .glass{
+      padding:30px;
+      border-radius:var(--radius);
+      background:var(--white);
+      border:1px solid rgba(255,255,255,.9);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(18px);
+    }
+
+    .about-text p{
+      color:#5d4d5e;
+      line-height:1.9;
+      margin-bottom:16px;
+    }
+
+    .about-text p:last-child{margin-bottom:0}
+
+    .stat-stack{
+      display:grid;
+      gap:14px;
+    }
+
+    .stat{
+      padding:20px;
+      border-radius:22px;
+      background:linear-gradient(135deg,rgba(255,237,246,.85),rgba(241,233,255,.8));
+      border:1px solid rgba(217,91,145,.10);
+    }
+
+    .stat strong{
+      display:block;
+      font-family:"Cormorant Garamond",serif;
+      font-size:34px;
+      color:var(--rose-deep);
+    }
+
+    .stat span{
+      color:#6f5c6d;
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .experience-card{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .experience-card::before{
+      content:"";
+      position:absolute;
+      width:130px;
+      height:130px;
+      right:-55px;
+      top:-55px;
+      border-radius:50%;
+      background:rgba(248,197,220,.35);
+    }
+
+    .card-top{
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      margin-bottom:18px;
+    }
+
+    .card-label{
+      color:var(--rose);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .card-date{
+      color:#8b7889;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    .experience-card h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:32px;
+      line-height:1.05;
+      margin-bottom:6px;
+    }
+
+    .company{
+      color:var(--rose-deep);
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+
+    .experience-card p{
+      color:#665667;
+      line-height:1.75;
+      font-size:14px;
+    }
+
+    .pill-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .pill{
+      padding:11px 15px;
+      border-radius:999px;
+      color:#69485f;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(169,70,117,.12);
+      box-shadow:0 7px 20px rgba(100,65,95,.06);
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .education{
+      display:grid;
+      grid-template-columns:1fr .7fr;
+      gap:20px;
+    }
+
+    .education-main h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:38px;
+      margin-bottom:5px;
+    }
+
+    .education-main .degree{
+      color:var(--rose-deep);
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .education-main p{
+      color:#665667;
+      line-height:1.8;
+    }
+
+    .thesis{
+      margin-top:20px;
+      padding:18px;
+      border-radius:20px;
+      background:linear-gradient(135deg,#fff0f6,#f2ebff);
+      color:#5d4a5d;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .project{
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .project-badge{
+      min-height:250px;
+      border-radius:28px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:30px;
+      background:
+        radial-gradient(circle at 70% 25%,rgba(255,255,255,.8) 0 3%,transparent 4%),
+        radial-gradient(circle at 25% 70%,rgba(255,255,255,.6) 0 2%,transparent 3%),
+        linear-gradient(145deg,#f9c8dc,#ded3f6);
+      color:#824767;
+      box-shadow:var(--shadow);
+    }
+
+    .project-badge strong{
+      display:block;
+      font-family:"Cormorant Garamond",serif;
+      font-size:52px;
+      line-height:.95;
+    }
+
+    .project-copy h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:38px;
+      line-height:1.05;
+      margin-bottom:14px;
+    }
+
+    .project-copy p{
+      color:#665667;
+      line-height:1.8;
+      margin-bottom:15px;
+    }
+
+    .contact{
+      text-align:center;
+      padding:60px 30px;
+      background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.85),transparent 28%),
+        linear-gradient(135deg,rgba(255,220,235,.86),rgba(229,218,250,.86));
+    }
+
+    .contact h2{font-size:clamp(48px,7vw,78px)}
+
+    .contact p{
+      max-width:620px;
+      margin:15px auto 25px;
+      color:#665667;
+      line-height:1.8;
+    }
+
+    .contact-links{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .contact-link{
+      display:inline-flex;
+      padding:12px 17px;
+      border-radius:999px;
+      text-decoration:none;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(169,70,117,.12);
+      font-size:13px;
+      font-weight:700;
+      color:#69485f;
+      transition:.25s ease;
+    }
+
+    .contact-link:hover{
+      transform:translateY(-2px);
+      background:white;
+      color:var(--rose-deep);
+    }
+
+    footer{
+      position:relative;
+      z-index:1;
+      padding:30px 15px 45px;
+      text-align:center;
+      color:#897789;
+      font-size:12px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(25px);
+      transition:opacity .8s ease,transform .8s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:none;
+    }
+
+    :focus-visible{
+      outline:3px solid rgba(217,91,145,.45);
+      outline-offset:4px;
+    }
+
+    @media(max-width:850px){
+      .nav-links{display:none}
+
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding-top:130px;
+        gap:40px;
+      }
+
+      .hero-role{margin-inline:auto}
+      .hero-actions{justify-content:center}
+      .hero-card{min-height:390px}
+      .mini-card{left:8%;bottom:0;text-align:left}
+
+      .about-grid,
+      .education,
+      .project{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:620px){
+      .hero h1{font-size:72px}
+      .hero-role{font-size:16px}
+      .section{padding:65px 0}
+      .glass{padding:23px}
+      .cards{grid-template-columns:1fr}
+      .portrait-orb{width:300px}
+      .initials{width:150px;height:150px;font-size:68px}
+      .mini-card{left:0;right:0;margin:auto;width:max-content;max-width:85%}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+      }
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
+    }
+  </style>
 </head>
 
-
 <body>
-
-
-
-<!-- TRISULA LIGHT EFFECT -->
-
-<div class="trisula">
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-
-
-
-
-<div class="card">
-
-
-<div class="spark one">
-✦
-</div>
-
-
-<div class="spark two">
-✧
-</div>
-
-
-
-<div class="profile">
-
-
-<div class="avatar">
-
-BP
-
-</div>
-
-
-
-<div class="content">
-
-
-<h1>
-Balqis Putri
-</h1>
-
-
-
-<div class="subtitle">
-
-Bachelor of Psychology
-<br>
-
-Human Resources Enthusiast | Industrial & Organizational Psychology
-
-</div>
-
-
-
-
-<p class="description">
-
-A Psychology graduate passionate about Human Resources,
-Talent Development, and Organizational Psychology.
-Interested in understanding human behavior and creating
-positive workplace experiences.
-
-</p>
-
-
-
-<div>
-
-<span class="tag">
-Recruitment
-</span>
-
-<span class="tag">
-Talent Development
-</span>
-
-<span class="tag">
-HR Administration
-</span>
-
-<span class="tag">
-Psychology
-</span>
-
-</div>
-
-
-
-<a href="#" class="button">
-
-Explore Profile
-
-</a>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
+  <div class="spark-field" aria-hidden="true">
+    <span class="spark">✦</span>
+    <span class="spark">✧</span>
+    <span class="spark">⋆</span>
+    <span class="spark">✦</span>
+    <span class="spark">·</span>
+    <span class="spark">✧</span>
+  </div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#home">Balqis ✦</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="hero" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">♡ Psychology × Research × People</div>
+
+        <h1>
+          Balqis
+          <span>Putri</span>
+        </h1>
+
+        <p class="hero-role">
+          <strong>Psychology Graduate</strong> · Freelance Research Assistant ·
+          Data &amp; Research Support · HR &amp; People Operations
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#experience">Explore My Work ✦</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/balqis-putri-50910116b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <div class="portrait-orb">
+          <div class="orbit"></div>
+          <div class="initials" aria-label="Balqis Putri initials">BP</div>
+        </div>
+
+        <div class="mini-card">
+          <small>Currently open to</small>
+          <strong>Freelance &amp; project-based roles</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <div class="section-kicker">A little about me</div>
+        <h2>Where people meet data.</h2>
+        <p class="section-intro">
+          A psychology background with hands-on experience across research,
+          data support, HR administration, recruitment, and organizational development.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <article class="glass about-text reveal">
+          <p>
+            I am a Psychology graduate from Universitas Sumatera Utara with a passion
+            for Human Resources, data-driven research, and organizational development.
+            My experience bridges HR and data analysis.
+          </p>
+          <p>
+            As a Freelance Research Assistant at STATCAL, I compile and structure data
+            for research, including collecting 100+ academic journal articles for
+            literature reviews and extracting financial reports from 100+ publicly
+            listed companies on the Indonesia Stock Exchange.
+          </p>
+          <p>
+            Previously, I completed an 11-month HR internship at PT Pacific Palmindo
+            Industri, supporting recruitment, HR administration, performance management,
+            training, and employee development activities.
+          </p>
+          <p>
+            I am currently open to freelance and project-based roles in research
+            assistance, data collection &amp; analysis, literature reviews, data entry,
+            and HR support.
+          </p>
+        </article>
+
+        <aside class="stat-stack reveal">
+          <div class="stat">
+            <strong>500+</strong>
+            <span>candidate resumes screened during HR internship</span>
+          </div>
+          <div class="stat">
+            <strong>50+</strong>
+            <span>candidate interviews coordinated</span>
+          </div>
+          <div class="stat">
+            <strong>300+</strong>
+            <span>employees supported through training-related activities</span>
+          </div>
+          <div class="stat">
+            <strong>100+</strong>
+            <span>academic articles and company financial reports handled for research</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-head reveal">
+        <div class="section-kicker">Experience</div>
+        <h2>Things I have worked on.</h2>
+      </div>
+
+      <div class="cards">
+        <article class="glass experience-card reveal">
+          <div class="card-top">
+            <span class="card-label">Research · Freelance</span>
+            <span class="card-date">Current profile</span>
+          </div>
+          <h3>Freelance Research Assistant</h3>
+          <div class="company">STATCAL</div>
+          <p>
+            Compiled and structured research data; collected 100+ academic journal
+            articles for literature reviews; retrieved key financial reports and
+            ratios for 100+ IDX-listed companies; entered, structured, and verified
+            datasets; maintained research notes and source documentation; and assisted
+            with reports and literature reviews.
+          </p>
+        </article>
+
+        <article class="glass experience-card reveal">
+          <div class="card-top">
+            <span class="card-label">Human Resources · Internship</span>
+            <span class="card-date">Dec 2021 – Oct 2022</span>
+          </div>
+          <h3>Human Resources Intern</h3>
+          <div class="company">PT. Pacific Palmindo Industri</div>
+          <p>
+            Posted job openings, screened 500+ resumes, coordinated 50+ interviews,
+            maintained employee records and HRIS data, supported KPI tracking,
+            Training Needs Analysis and Individual Development Plans, and coordinated
+            training activities for approximately 300 employees.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="section-head reveal">
+        <div class="section-kicker">Education</div>
+        <h2>The academic foundation.</h2>
+      </div>
+
+      <div class="education">
+        <article class="glass education-main reveal">
+          <h3>Universitas Sumatera Utara</h3>
+          <div class="degree">Bachelor · Psychology</div>
+          <p>
+            Activities and societies included Student Government (PEMA USU),
+            Psychology Club, and event committees. Relevant coursework included
+            Industrial/Organizational Psychology, Research Methods, and Statistics.
+          </p>
+
+          <div class="thesis">
+            <strong>Thesis:</strong><br>
+            “The Influence of Compensation and Employee Engagement on Turnover Intention.”
+          </div>
+        </article>
+
+        <aside class="glass reveal">
+          <div class="section-kicker">Academic interests</div>
+          <div class="pill-wrap" style="margin-top:18px">
+            <span class="pill">Industrial Psychology</span>
+            <span class="pill">Organizational Psychology</span>
+            <span class="pill">Research Methods</span>
+            <span class="pill">Statistics</span>
+            <span class="pill">Human Resources</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-head reveal">
+        <div class="section-kicker">Skills &amp; tools</div>
+        <h2>My little toolkit.</h2>
+        <p class="section-intro">
+          A blend of people-focused HR capabilities, research skills, and practical
+          data and productivity tools reflected in the LinkedIn profile.
+        </p>
+      </div>
+
+      <div class="glass reveal">
+        <div class="pill-wrap">
+          <span class="pill">Human Resources (HR)</span>
+          <span class="pill">Research Skills</span>
+          <span class="pill">Data Collection</span>
+          <span class="pill">Database Administration</span>
+          <span class="pill">Microsoft Office</span>
+          <span class="pill">Microsoft Excel</span>
+          <span class="pill">SPSS</span>
+          <span class="pill">SmartPLS</span>
+          <span class="pill">Google Workspace</span>
+          <span class="pill">Recruiting</span>
+          <span class="pill">Employee Training</span>
+          <span class="pill">Literature Reviews</span>
+          <span class="pill">HR Administration</span>
+          <span class="pill">KPI</span>
+          <span class="pill">Training Needs Analysis</span>
+          <span class="pill">Individual Development Plans</span>
+          <span class="pill">Observational Studies</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="project">
+      <div class="section-head reveal">
+        <div class="section-kicker">Featured project</div>
+        <h2>Research, but make it useful.</h2>
+      </div>
+
+      <div class="project">
+        <div class="project-badge reveal">
+          <div>
+            <strong>IDX</strong>
+            <span>Financial Data Web App</span>
+          </div>
+        </div>
+
+        <article class="glass project-copy reveal">
+          <h3>Indonesia IDX Financial Data Web App on STATCAL</h3>
+          <p>
+            Contributed to the development of a public R-Shiny application presenting
+            financial data and ratios for all IDX sectors from 2021–2024.
+          </p>
+          <p>
+            Collected and organized company financial reports to feed the application,
+            combining research support, data structuring, verification, and practical
+            data presentation.
+          </p>
+          <div class="pill-wrap">
+            <span class="pill">R-Shiny</span>
+            <span class="pill">Financial Data</span>
+            <span class="pill">Data Collection</span>
+            <span class="pill">Research Support</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="glass contact reveal">
+        <div class="section-kicker">Let's connect</div>
+        <h2>Have a project in mind?</h2>
+        <p>
+          I welcome opportunities to contribute analytical, research, administrative,
+          and HR support to organizations and research teams.
+        </p>
+
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.linkedin.com/in/balqis-putri-50910116b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="contact-link" href="#home">Back to top ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Balqis Putri · Psychology × Research × People ✦
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
 </body>
-
 </html>
